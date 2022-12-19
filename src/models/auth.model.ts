@@ -1,4 +1,4 @@
-import { Roles } from "./users.model";
+import { Roles } from './users.model';
 
 export interface Tokens {
   accessToken: string;

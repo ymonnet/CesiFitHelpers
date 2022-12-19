@@ -32,7 +32,9 @@ export abstract class AuthMiddlewares {
     const isSuspended: boolean = decodedToken?.isSuspended;
 
     if (isSuspended) {
-      return res.status(403).send({ message: 'Unauthorized: Suspended profile' });
+      return res
+        .status(403)
+        .send({ message: 'Unauthorized: Suspended profile' });
     }
 
     return next();
@@ -43,7 +45,11 @@ export abstract class AuthMiddlewares {
     res: Response,
     next: NextFunction
   ): any {
-    if ((req as any).isApiCall || (req as any).isCommercialDepartmentCall || (req as any).isTechnicalDepartmentCall) {
+    if (
+      (req as any).isApiCall ||
+      (req as any).isCommercialDepartmentCall ||
+      (req as any).isTechnicalDepartmentCall
+    ) {
       return next();
     }
 
@@ -53,24 +59,24 @@ export abstract class AuthMiddlewares {
     let mail;
     if (req.params?.key) {
       if (req.params.key.includes('@')) {
-        id = null
+        id = null;
         mail = req.params.key;
       } else {
         id = Number(req.params.key);
-        mail = null
+        mail = null;
       }
     } else {
       id = Number(req.body.id);
-      mail = null
+      mail = null;
     }
 
     const decodedToken = AuthMiddlewares.getTokenPayload(accessToken);
 
     let isProfileOwner: boolean;
     if (mail?.length) {
-      isProfileOwner = (mail === decodedToken.mail);
+      isProfileOwner = mail === decodedToken.mail;
     } else {
-      isProfileOwner = (Number(id) === Number(decodedToken.id));
+      isProfileOwner = Number(id) === Number(decodedToken.id);
     }
 
     if (!isProfileOwner) {
@@ -85,7 +91,11 @@ export abstract class AuthMiddlewares {
     res: Response,
     next: NextFunction
   ): any {
-    if ((req as any).isApiCall || (req as any).isCommercialDepartmentCall || (req as any).isTechnicalDepartmentCall) {
+    if (
+      (req as any).isApiCall ||
+      (req as any).isCommercialDepartmentCall ||
+      (req as any).isTechnicalDepartmentCall
+    ) {
       return next();
     }
 
@@ -109,7 +119,11 @@ export abstract class AuthMiddlewares {
     res: Response,
     next: NextFunction
   ): any {
-    if ((req as any).isApiCall || (req as any).isCommercialDepartmentCall || (req as any).isTechnicalDepartmentCall) {
+    if (
+      (req as any).isApiCall ||
+      (req as any).isCommercialDepartmentCall ||
+      (req as any).isTechnicalDepartmentCall
+    ) {
       return next();
     }
 
@@ -130,7 +144,11 @@ export abstract class AuthMiddlewares {
     res: Response,
     next: NextFunction
   ): any {
-    if ((req as any).isApiCall || (req as any).isCommercialDepartmentCall || (req as any).isTechnicalDepartmentCall) {
+    if (
+      (req as any).isApiCall ||
+      (req as any).isCommercialDepartmentCall ||
+      (req as any).isTechnicalDepartmentCall
+    ) {
       return next();
     }
 
@@ -151,7 +169,11 @@ export abstract class AuthMiddlewares {
     res: Response,
     next: NextFunction
   ): any {
-    if ((req as any).isApiCall || (req as any).isCommercialDepartmentCall || (req as any).isTechnicalDepartmentCall) {
+    if (
+      (req as any).isApiCall ||
+      (req as any).isCommercialDepartmentCall ||
+      (req as any).isTechnicalDepartmentCall
+    ) {
       return next();
     }
 
@@ -172,7 +194,11 @@ export abstract class AuthMiddlewares {
     res: Response,
     next: NextFunction
   ): any {
-    if ((req as any).isApiCall || (req as any).isCommercialDepartmentCall || (req as any).isTechnicalDepartmentCall) {
+    if (
+      (req as any).isApiCall ||
+      (req as any).isCommercialDepartmentCall ||
+      (req as any).isTechnicalDepartmentCall
+    ) {
       return next();
     }
 
@@ -210,7 +236,11 @@ export abstract class AuthMiddlewares {
     res: Response,
     next: NextFunction
   ): any {
-    if ((req as any).isApiCall || (req as any).isCommercialDepartmentCall || (req as any).isTechnicalDepartmentCall) {
+    if (
+      (req as any).isApiCall ||
+      (req as any).isCommercialDepartmentCall ||
+      (req as any).isTechnicalDepartmentCall
+    ) {
       return next();
     }
 
