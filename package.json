@@ -39,9 +39,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/grp-2-projet-elective/cesieats-helpers/issues"
+    "url": "https://github.com/ymonnet/cesieats-helpers/issues"
   },
-  "homepage": "https://github.com/grp-2-projet-elective/cesieats-helpers#readme",
+  "homepage": "https://github.com/ymonnet/cesieats-helpers#readme",
   "engines": {
     "node": ">=12.0"
   },
