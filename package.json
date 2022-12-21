@@ -78,5 +78,8 @@
   },
   "directories": {
     "lib": "lib"
-  }
+  },
+ "publishConfig": {
+   "@ymonnet:registry": "https://npm.pkg.github.com"
+ }
 }
