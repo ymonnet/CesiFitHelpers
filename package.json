@@ -1,5 +1,5 @@
 {
-  "name": "@ymonnet/helpers",
+  "name": "@ymonnet/cesifithelpers",
   "version": "1.1.40",
   "description": "> Template to kickstart creating a Node.js module using TypeScript and VSCode",
   "main": "./lib/index.js",
